@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Firozeh Solimani | Research Portfolio</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #183047;
+      background: #f8fafb;
+      line-height: 1.7;
+    }
+    nav {
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      background: white;
+    }
+    nav a { color: #183047; text-decoration: none; }
+    .links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .hero {
+      padding: 100px 8%;
+      background: linear-gradient(125deg,#102b46,#086b77);
+      color: white;
+    }
+    .hero h1 { font-size: clamp(36px,6vw,65px); margin: 0; }
+    .hero p { max-width: 650px; font-size: 19px; }
+    main { max-width: 1050px; margin: auto; padding: 55px 25px; }
+    section { margin-bottom: 65px; }
+    h2 { color: #086b77; }
+    .cards { display: grid; grid-template-columns:
+      repeat(auto-fit,minmax(230px,1fr)); gap: 20px; }
+    .card {
+      background: white;
+      border: 1px solid #e0e8ed;
+      border-radius: 12px;
+      padding: 24px;
+    }
+    footer { text-align: center; padding: 25px; background: #102b46; color: white; }
+  </style>
+</head>
+<body>
+  <nav>
+    <strong>Firozeh Solimani</strong>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>Firozeh Solimani</h1>
+    <p>Postdoctoral Researcher | Artificial Intelligence,
+       Computer Vision & Plant Phenotyping</p>
+    <p>Exploring intelligent technologies for
+       next-generation agricultural research.</p>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Welcome to my academic research portfolio.
+         My work focuses on AI-driven plant phenotyping,
+         deep learning and precision agriculture.</p>
+    </section>
+
+    <section id="research">
+      <h2>Research Areas</h2>
+      <div class="cards">
+        <div class="card"><h3>Computer Vision</h3>
+          <p>Image analysis, object detection and segmentation.</p></div>
+        <div class="card"><h3>Plant Phenotyping</h3>
+          <p>AI-powered crop monitoring and trait analysis.</p></div>
+        <div class="card"><h3>Multimodal AI</h3>
+          <p>Integration of imaging and genomic information.</p></div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <p>Selected scientific publications will appear here.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Professional contact information will be added soon.</p>
+    </section>
+  </main>
+
+  <footer>© 2026 Firozeh Solimani</footer>
+</body>
+</html>
