@@ -5,7 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Academic portfolio of Firozeh Solimani, researcher in artificial intelligence, computer vision and plant phenotyping.">
+
 <title>Firozeh Solimani | Research Portfolio</title>
+
 <style>
 :root {
   --navy: #102c40;
@@ -13,14 +15,24 @@
   --light: #f4f8f9;
   --text: #273b48;
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--text);
   line-height: 1.7;
 }
+
+/* NAVIGATION */
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -30,27 +42,86 @@ nav {
   padding: 20px 7%;
   background: white;
 }
-.brand { font-weight: bold; color: var(--navy); }
-.links { display: flex; flex-wrap: wrap; gap: 18px; }
-a { color: var(--teal); }
-.links a { text-decoration: none; color: var(--navy); }
+
+.brand {
+  font-weight: bold;
+  color: var(--navy);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+a {
+  color: var(--teal);
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--navy);
+}
+
+/* HERO SECTION */
+
 .hero {
   background: linear-gradient(120deg, #102c40, #087e83);
   color: white;
-  padding: 110px 8%;
+  padding: 90px 8%;
 }
+
+.hero-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
 .hero h1 {
   font-size: clamp(38px, 6vw, 70px);
   line-height: 1.15;
   margin: 15px 0;
 }
-.hero p { max-width: 700px; font-size: 19px; }
+
+.hero p {
+  max-width: 700px;
+  font-size: 19px;
+}
+
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 3px;
   font-size: 13px;
   color: #91f0dc;
 }
+
+/* CIRCULAR PROFILE PHOTO */
+
+.profile-photo {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 6px solid white;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.28);
+  display: block;
+}
+
+.hero-photo {
+  flex-shrink: 0;
+}
+
+/* BUTTONS */
+
 .button {
   display: inline-block;
   margin: 15px 12px 0 0;
@@ -60,38 +131,126 @@ a { color: var(--teal); }
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
+  transition: transform 0.2s, background 0.2s;
 }
-main { max-width: 1100px; margin: auto; padding: 30px 24px; }
-section { padding: 55px 0; scroll-margin-top: 25px; }
-h2 { color: var(--navy); font-size: 30px; }
+
+.button:hover {
+  background: #d8f5ef;
+  transform: translateY(-2px);
+}
+
+/* MAIN CONTENT */
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 24px;
+}
+
+section {
+  padding: 55px 0;
+  scroll-margin-top: 25px;
+}
+
+h2 {
+  color: var(--navy);
+  font-size: 30px;
+}
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns:
+    repeat(auto-fit, minmax(240px, 1fr));
   gap: 22px;
 }
+
 .card {
   padding: 26px;
   background: var(--light);
   border: 1px solid #e0e9ed;
   border-radius: 12px;
 }
-.card h3 { color: var(--teal); }
+
+.card h3 {
+  color: var(--teal);
+}
+
+/* FOOTER */
+
 footer {
   padding: 28px;
   background: var(--navy);
   color: white;
   text-align: center;
 }
-@media (max-width: 600px) {
-  .hero { padding: 70px 7%; }
-  nav { padding: 18px 6%; }
+
+/* MOBILE RESPONSIVE DESIGN */
+
+@media (max-width: 800px) {
+
+  .hero {
+    padding: 65px 7%;
+  }
+
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 35px;
+  }
+
+  .hero-text {
+    width: 100%;
+  }
+
+  .hero-photo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-photo {
+    width: 230px;
+    height: 230px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  nav {
+    padding: 18px 6%;
+  }
 }
+
+@media (max-width: 400px) {
+  .profile-photo {
+    width: 190px;
+    height: 190px;
+  }
+
+  .hero h1 {
+    font-size: 35px;
+  }
+
+  .eyebrow {
+    letter-spacing: 1px;
+  }
+}
+
 </style>
 </head>
+
 <body>
+
+<!-- NAVIGATION -->
 
 <nav>
   <div class="brand">FIROZEH SOLIMANI</div>
+
   <div class="links">
     <a href="#about">About</a>
     <a href="#research">Research</a>
@@ -101,86 +260,179 @@ footer {
   </div>
 </nav>
 
+<!-- HERO SECTION -->
+
 <header class="hero">
-  <div class="eyebrow">Research • Innovation • Discovery</div>
-  <h1>Firozeh Solimani</h1>
-  <p>Postdoctoral Researcher</p>
-  <p>Artificial Intelligence | Computer Vision |
-     Deep Learning | Plant Phenotyping</p>
-  <p>Advancing agricultural research through
-     intelligent imaging and data-driven technologies.</p>
-  <a class="button" href="#research">Explore My Research</a>
-  <a class="button" href="#publications">Publications</a>
+
+  <div class="hero-content">
+
+    <div class="hero-text">
+
+      <div class="eyebrow">
+        Research • Innovation • Discovery
+      </div>
+
+      <h1>Firozeh Solimani</h1>
+
+      <p>Postdoctoral Researcher</p>
+
+      <p>
+        Artificial Intelligence | Computer Vision |
+        Deep Learning | Plant Phenotyping
+      </p>
+
+      <p>
+        Advancing agricultural research through
+        intelligent imaging and data-driven technologies.
+      </p>
+
+      <a class="button" href="#research">
+        Explore My Research
+      </a>
+
+      <a class="button" href="#publications">
+        Publications
+      </a>
+
+    </div>
+
+    <div class="hero-photo">
+
+      <img
+        src="WhatsApp Image 2026-06-05 at 9.06.03 AM.jpeg"
+        alt="Portrait of Firozeh Solimani"
+        class="profile-photo"
+      >
+
+    </div>
+
+  </div>
+
 </header>
 
+<!-- MAIN CONTENT -->
+
 <main>
+
 <section id="about">
+
   <h2>About Me</h2>
+
   <p>
-    I am a postdoctoral researcher at CREA – Research
-    Centre for Cereal and Industrial Crops, Italy.
-    My research focuses on applying artificial intelligence,
-    computer vision and machine learning to plant
-    phenotyping and agricultural data analysis.
+    I am a postdoctoral researcher at CREA –
+    Research Centre for Cereal and Industrial Crops,
+    Italy.
+
+    My research focuses on applying artificial
+    intelligence, computer vision and machine
+    learning to plant phenotyping and
+    agricultural data analysis.
   </p>
+
 </section>
 
 <section id="research">
+
   <h2>Research Interests</h2>
+
   <div class="grid">
+
     <div class="card">
       <h3>Computer Vision</h3>
-      <p>Object detection, instance segmentation
-         and image-based crop analysis.</p>
+      <p>
+        Object detection, instance segmentation
+        and image-based crop analysis.
+      </p>
     </div>
+
     <div class="card">
       <h3>Plant Phenotyping</h3>
-      <p>High-throughput phenotyping and
-         quantitative crop trait estimation.</p>
+      <p>
+        High-throughput phenotyping and
+        quantitative crop trait estimation.
+      </p>
     </div>
+
     <div class="card">
       <h3>Multimodal AI</h3>
-      <p>Integration of UAV imagery, near-field
-         imaging and genomic information.</p>
+      <p>
+        Integration of UAV imagery, near-field
+        imaging and genomic information.
+      </p>
     </div>
+
   </div>
+
 </section>
 
 <section id="projects">
+
   <h2>Selected Research Projects</h2>
+
   <div class="grid">
+
     <div class="card">
+
       <h3>Wheat Spike Instance Segmentation</h3>
-      <p>Deep learning for wheat spike detection,
-         segmentation and grain yield estimation.</p>
+
+      <p>
+        Deep learning for wheat spike detection,
+        segmentation and grain yield estimation.
+      </p>
+
     </div>
+
     <div class="card">
+
       <h3>Multimodal Crop Trait Prediction</h3>
-      <p>Combining UAV time-series, ground imagery
-         and SNP markers for crop trait prediction.</p>
+
+      <p>
+        Combining UAV time-series, ground imagery
+        and SNP markers for crop trait prediction.
+      </p>
+
     </div>
+
   </div>
+
 </section>
 
 <section id="publications">
+
   <h2>Selected Publications</h2>
+
   <p>
     An Integrated YOLOv11-Based Framework for
     Wheat Spike Phenotyping Segmentation and
     Grain Yield Estimation.
   </p>
-  <p>Additional publication details and links
-     will be added here.</p>
+
+  <p>
+    Additional publication details and links
+    will be added here.
+  </p>
+
 </section>
 
 <section id="contact">
+
   <h2>Contact</h2>
-  <p>CREA – Research Centre for Cereal and
-     Industrial Crops, Italy</p>
-  <p>Professional email and academic profile
-     links will be added here.</p>
+
+  <p>
+    CREA – Research Centre for Cereal and
+    Industrial Crops, Italy
+  </p>
+
+  <p>
+    Professional email and academic profile
+    links will be added here.
+  </p>
+
 </section>
+
 </main>
+
+<!-- FOOTER -->
 
 <footer>
   © 2026 Firozeh Solimani | Academic Research Portfolio
