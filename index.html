@@ -2,1050 +2,1398 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Firozeh Solimani | Research Portfolio</title>
-
-<meta name="description" content="Academic portfolio of Firozeh Solimani, researcher in artificial intelligence, computer vision and plant phenotyping.">
-
-<meta name="google-site-verification" content="RJyu_HihEz_NsIWs3Kt9qSAAT2_62MI_On8Qb6tiqtw">
-
-<meta name="theme-color" content="#102c40">
-
-<style>
-:root {
-  --navy: #102c40;
-  --teal: #087e83;
-  --ink: #253947;
-  --muted: #607482;
-  --pale: #f4f8f9;
-  --line: #e0e9ed;
-  --white: #ffffff;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  color: var(--ink);
-  line-height: 1.75;
-  background: white;
-}
-
-a {
-  color: var(--teal);
-}
-
-.container {
-  width: min(1120px, 88%);
-  margin: auto;
-}
-
-/* NAVIGATION */
-
-.site-nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: rgba(255,255,255,.97);
-  border-bottom: 1px solid var(--line);
-}
-
-.nav-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  min-height: 76px;
-}
-
-.brand {
-  font-size: 1rem;
-  letter-spacing: .11em;
-  font-weight: 800;
-  text-decoration: none;
-  color: var(--navy);
-}
-
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 23px;
-}
-
-.links a {
-  text-decoration: none;
-  color: var(--navy);
-  font-size: .89rem;
-  font-weight: 600;
-}
-
-.links a:hover {
-  color: var(--teal);
-}
-
-/* HERO */
-
-.hero {
-  background:
-    radial-gradient(
-      circle at 86% 20%,
-      rgba(70,191,174,.20),
-      transparent 30%
-    ),
-    linear-gradient(
-      125deg,
-      #102c40 0%,
-      #153e50 57%,
-      #087e83 100%
-    );
-  color: white;
-}
-
-.hero-inner {
-  display: grid;
-  grid-template-columns: minmax(0,1fr) 300px;
-  align-items: center;
-  gap: 75px;
-  padding: 100px 0;
-}
-
-.eyebrow {
-  font-size: .78rem;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #a5efe3;
-}
-
-.hero h1 {
-  font-size: clamp(2.7rem,5.5vw,4.9rem);
-  letter-spacing: -.045em;
-  line-height: 1.12;
-  margin: 20px 0;
-}
-
-.role {
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.specialties {
-  color: #d0efed;
-  font-size: 1.02rem;
-}
-
-.hero-intro {
-  font-size: 1.12rem;
-  max-width: 660px;
-  color: #edf8f8;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
-.button {
-  display: inline-block;
-  padding: 12px 20px;
-  border-radius: 8px;
-  background: white;
-  color: var(--navy);
-  text-decoration: none;
-  font-weight: 700;
-  border: 1px solid white;
-  transition: transform .2s;
-}
-
-.button:hover {
-  transform: translateY(-2px);
-}
-
-.button.secondary {
-  background: transparent;
-  color: white;
-}
-
-/* PROFILE PHOTO */
-
-.profile-photo {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center 50%;
-  border: 7px solid white;
-  box-shadow: 0 20px 60px rgba(0,29,45,.5);
-  display: block;
-}
-
-/* CONTENT */
-
-main {
-  padding-bottom: 40px;
-}
-
-.content-section {
-  padding: 74px 0;
-  border-bottom: 1px solid var(--line);
-  scroll-margin-top: 85px;
-}
-
-.section-kicker {
-  font-size: .76rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--teal);
-  font-weight: 800;
-  margin: 0 0 7px;
-}
-
-.content-section h2 {
-  color: var(--navy);
-  font-size: clamp(1.8rem,3vw,2.5rem);
-  letter-spacing: -.035em;
-  line-height: 1.25;
-  margin: 0 0 28px;
-}
-
-.content-section h2:not(:first-child) {
-  margin-top: 45px;
-}
-
-.prose {
-  max-width: 850px;
-}
-
-.prose p {
-  margin: 0 0 20px;
-}
-
-.personal-quote {
-  margin: 28px 0;
-  padding: 16px 25px;
-  border-left: 4px solid var(--teal);
-  background: var(--pale);
-  font-size: 1.2rem;
-  font-style: italic;
-  color: var(--navy);
-}
-
-/* RESEARCH CARDS */
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 20px;
-}
-
-.cards.two {
-  grid-template-columns: repeat(2,minmax(0,1fr));
-}
-
-.card {
-  background: var(--pale);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 26px;
-  box-shadow: 0 8px 25px rgba(16,44,64,.035);
-  transition: transform .2s;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-}
-
-.card h3 {
-  margin: 0 0 9px;
-  color: var(--teal);
-  font-size: 1.16rem;
-}
-
-.card p {
-  margin: 0;
-}
-
-/* PUBLICATIONS */
-
-.publications {
-  display: grid;
-}
-
-.publication {
-  display: grid;
-  grid-template-columns: 75px 1fr;
-  gap: 20px;
-  padding: 23px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.pub-year {
-  font-size: .85rem;
-  font-weight: 800;
-  color: var(--teal);
-  padding-top: 5px;
-}
-
-.publication h3 {
-  color: var(--navy);
-  font-size: 1.09rem;
-  line-height: 1.45;
-  margin: 0 0 6px;
-}
-
-.publication p {
-  font-size: .93rem;
-  margin: 5px 0;
-  color: var(--muted);
-}
-
-.pub-authors {
-  color: var(--ink) !important;
-}
-
-.inline-link {
-  font-size: .9rem;
-  font-weight: 700;
-  text-underline-offset: 4px;
-}
-
-/* CONTACT */
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-
-.contact-panel {
-  border: 1px solid var(--line);
-  background: var(--pale);
-  border-radius: 14px;
-  padding: 26px;
-}
-
-.contact-panel h3 {
-  color: var(--navy);
-  margin-top: 0;
-}
-
-.contact-panel p {
-  margin: 8px 0;
-  overflow-wrap: anywhere;
-}
-
-footer {
-  background: var(--navy);
-  color: #e8f1f4;
-  text-align: center;
-  padding: 30px 18px;
-  font-size: .91rem;
-}
-
-/* MOBILE */
-
-@media (max-width: 850px) {
-  .nav-inner {
-    padding: 16px 0;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 9px;
-  }
-
-  .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 35px;
-    text-align: center;
-    padding: 65px 0;
-  }
-
-  .hero-photo {
-    grid-row: 1;
-    justify-self: center;
-  }
-
-  .profile-photo {
-    width: 230px;
-    height: 230px;
-  }
-
-  .hero-actions {
-    justify-content: center;
-  }
-
-  .hero-intro {
-    margin-inline: auto;
-  }
-
-  .cards,
-  .cards.two,
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .content-section {
-    padding: 52px 0;
-    scroll-margin-top: 125px;
-  }
-}
-
-@media (max-width: 450px) {
-  .container {
-    width: 90%;
-  }
-
-  .links {
-    gap: 8px 13px;
-  }
-
-  .links a {
-    font-size: .81rem;
-  }
-
-  .profile-photo {
-    width: 195px;
-    height: 195px;
-  }
-
-  .publication {
-    grid-template-columns: 1fr;
-    gap: 3px;
-  }
-
-  .hero h1 {
-    font-size: 2.6rem;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Firozeh Solimani | Research Portfolio</title>
+
+  <meta name="description"
+        content="Academic portfolio of Firozeh Solimani, researcher in artificial intelligence, computer vision and plant phenotyping.">
+
+  <meta name="google-site-verification"
+        content="RJyu_HihEz_NsIWs3Kt9qSAAT2_62MI_On8Qb6tiqtw">
+
+  <meta name="theme-color" content="#102c40">
+
+  <style>
+    :root {
+      --navy: #102c40;
+      --teal: #087e83;
+      --ink: #253947;
+      --muted: #607482;
+      --pale: #f4f8f9;
+      --line: #e0e9ed;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      line-height: 1.75;
+      background: white;
+    }
+
+    a {
+      color: var(--teal);
+    }
+
+    .container {
+      width: min(1120px, 88%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, .97);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      min-height: 76px;
+    }
+
+    .brand {
+      font-size: 1rem;
+      letter-spacing: .11em;
+      font-weight: 800;
+      text-decoration: none;
+      color: var(--navy);
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 23px;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: var(--navy);
+      font-size: .89rem;
+      font-weight: 600;
+    }
+
+    .links a:hover {
+      color: var(--teal);
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        radial-gradient(
+          circle at 86% 20%,
+          rgba(70, 191, 174, .20),
+          transparent 30%
+        ),
+        linear-gradient(
+          125deg,
+          #102c40 0%,
+          #153e50 57%,
+          #087e83 100%
+        );
+      color: white;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      align-items: center;
+      gap: 75px;
+      padding: 100px 0;
+    }
+
+    .eyebrow {
+      font-size: .78rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #a5efe3;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 5.5vw, 4.9rem);
+      letter-spacing: -.045em;
+      line-height: 1.12;
+      margin: 20px 0;
+    }
+
+    .role {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .specialties {
+      color: #d0efed;
+      font-size: 1.02rem;
+    }
+
+    .hero-intro {
+      font-size: 1.12rem;
+      max-width: 660px;
+      color: #edf8f8;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 8px;
+      background: white;
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid white;
+      transition: transform .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: white;
+    }
+
+    /* PROFILE PHOTO */
+
+    .profile-photo {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 50%;
+      border: 7px solid white;
+      box-shadow: 0 20px 60px rgba(0, 29, 45, .5);
+      display: block;
+    }
+
+    /* CONTENT */
+
+    main {
+      padding-bottom: 40px;
+    }
+
+    .content-section {
+      padding: 74px 0;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 85px;
+    }
+
+    .section-kicker {
+      font-size: .76rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--teal);
+      font-weight: 800;
+      margin: 0 0 7px;
+    }
+
+    .content-section h2 {
+      color: var(--navy);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      letter-spacing: -.035em;
+      line-height: 1.25;
+      margin: 0 0 28px;
+    }
+
+    .content-section h2:not(:first-child) {
+      margin-top: 45px;
+    }
+
+    .prose {
+      max-width: 850px;
+    }
+
+    .prose p {
+      margin: 0 0 20px;
+    }
+
+    .personal-quote {
+      margin: 28px 0;
+      padding: 16px 25px;
+      border-left: 4px solid var(--teal);
+      background: var(--pale);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--navy);
+    }
+
+    /* RESEARCH & PROJECT CARDS */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .cards.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      background: var(--pale);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 26px;
+      box-shadow: 0 8px 25px rgba(16, 44, 64, .035);
+      transition: transform .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h3 {
+      margin: 0 0 9px;
+      color: var(--teal);
+      font-size: 1.16rem;
+    }
+
+    .card p {
+      margin: 0;
+    }
+
+    /* CONFERENCES */
+
+    .conference-intro {
+      max-width: 850px;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .conference-card {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .conference-card .section-kicker {
+      margin: 0;
+    }
+
+    .conference-card h3 {
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    .conference-card p {
+      margin: 0;
+      font-size: .94rem;
+    }
+
+    .conference-card .conference-title {
+      color: var(--navy);
+      font-style: italic;
+    }
+
+    .conference-card .inline-link {
+      display: inline-block;
+      margin-top: auto;
+      padding-top: 5px;
+    }
+
+    /* PUBLICATIONS */
+
+    .publications {
+      display: grid;
+    }
+
+    .publication {
+      display: grid;
+      grid-template-columns: 75px 1fr;
+      gap: 20px;
+      padding: 23px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pub-year {
+      font-size: .85rem;
+      font-weight: 800;
+      color: var(--teal);
+      padding-top: 5px;
+    }
+
+    .publication h3 {
+      color: var(--navy);
+      font-size: 1.09rem;
+      line-height: 1.45;
+      margin: 0 0 6px;
+    }
+
+    .publication p {
+      font-size: .93rem;
+      margin: 5px 0;
+      color: var(--muted);
+    }
+
+    .pub-authors {
+      color: var(--ink) !important;
+    }
+
+    .inline-link {
+      font-size: .9rem;
+      font-weight: 700;
+      text-underline-offset: 4px;
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .contact-panel {
+      border: 1px solid var(--line);
+      background: var(--pale);
+      border-radius: 14px;
+      padding: 26px;
+    }
+
+    .contact-panel h3 {
+      color: var(--navy);
+      margin-top: 0;
+    }
+
+    .contact-panel p {
+      margin: 8px 0;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      background: var(--navy);
+      color: #e8f1f4;
+      text-align: center;
+      padding: 30px 18px;
+      font-size: .91rem;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      .nav-inner {
+        padding: 16px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 9px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        text-align: center;
+        padding: 65px 0;
+      }
+
+      .hero-photo {
+        grid-row: 1;
+        justify-self: center;
+      }
+
+      .profile-photo {
+        width: 230px;
+        height: 230px;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-intro {
+        margin-inline: auto;
+      }
+
+      .cards,
+      .cards.two,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .content-section {
+        padding: 52px 0;
+        scroll-margin-top: 125px;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .container {
+        width: 90%;
+      }
+
+      .links {
+        gap: 8px 13px;
+      }
+
+      .links a {
+        font-size: .81rem;
+      }
+
+      .profile-photo {
+        width: 195px;
+        height: 195px;
+      }
+
+      .publication {
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
+
+      .hero h1 {
+        font-size: 2.6rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+  <!-- NAVIGATION -->
 
-<nav class="site-nav">
-  <div class="container nav-inner">
-    <a class="brand" href="#home">
-      FIROZEH SOLIMANI
-    </a>
+  <nav class="site-nav">
+    <div class="container nav-inner">
 
-    <div class="links">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#projects">Projects</a>
-      <a href="#publications">Publications</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-</nav>
+      <a class="brand" href="#home">
+        FIROZEH SOLIMANI
+      </a>
 
-<!-- HERO -->
-
-<header class="hero" id="home">
-  <div class="container hero-inner">
-
-    <div class="hero-text">
-      <div class="eyebrow">
-        Research • Innovation • Discovery
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#conferences">Conferences</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
       </div>
-
-      <h1>Firozeh Solimani</h1>
-
-      <p class="role">Researcher (PostDoc)</p>
-
-      <p class="specialties">
-        Plant Phenotyping | Deep Learning |
-        Computer Vision | Machine Learning |
-        UAS and Satellite Systems | Genetics
-      </p>
-
-      <p class="hero-intro">
-        Advancing agricultural research through
-        intelligent imaging and data-driven technologies.
-      </p>
-
-      <div class="hero-actions">
-        <a class="button" href="#research">
-          Explore My Research
-        </a>
-
-        <a class="button secondary" href="#publications">
-          Publications
-        </a>
-      </div>
-    </div>
-
-  
-
-<div class="hero-photo">
-  <img
-    src="./profile.jpg.jpeg"
-    alt="Firozeh Solimani"
-    class="profile-photo"
-    width="300"
-    height="300"
-  >
-</div>
-
-
-
-  </div>
-</header>
-
-<main class="container">
-
-<!-- ABOUT -->
-
-<section id="about" class="content-section">
-
-  <p class="section-kicker">My Story</p>
-
-  <div class="prose">
-
-    <h2>About Me</h2>
-
-    <p>
-      <strong>
-        My journey into science began with a simple
-        aspiration: to make a meaningful difference
-        in the lives of farmers in my hometown.
-      </strong>
-    </p>
-
-    <p>
-      I began my academic journey with <strong> a Bachelor's
-      degree in Rural Development and Management
-      Engineering,
-        </strong>,
-        driven by a desire to understand
-      and address the challenges facing my rural
-      community. During an internship at a local
-      agricultural machinery center, I discovered
-      a growing fascination with agricultural
-      machinery design. Seeing the difficulties
-      farmers faced, particularly during harvesting,
-      inspired me to imagine machines and tools
-      that could reduce their physical burden
-      and make agricultural work more efficient.
-    </p>
-
-    <p>
-      This curiosity led me to pursue 
-      <strong>
-        a Master's
-      degree in Biosystems Engineering at Khuzestan University
-        of Agricultural Sciences and Natural Resources,
-        Iran
-      </strong>,
-      where I worked on the design of air-assisted
-      nozzles for boom sprayers using SolidWorks.
-      It was an opportunity to turn practical
-      agricultural challenges into engineering solutions.
-    </p>
-
-    <p>
-      Over time, however, my curiosity expanded
-      beyond machinery. I became increasingly
-      interested in how biology, data science,
-      and emerging technologies could come together
-      to transform agricultural research.
-      This ambition brought me to Italy, where
-      I pursued 
-      <strong> a PhD in Industry 4.0 at Politecnico di Bari, Italy</strong>.
-      I completed my doctoral research in October 2024
-      and successfully defended my dissertation
-      in January 2025.
-    </p>
-
-    <p>
-      Today, I am a
-      <strong>
-        Postdoctoral Researcher at CREA – Research
-        Centre for Cereal and Industrial Crops, Italy
-      </strong>,
-      where I continue exploring the intersection
-      of artificial intelligence, computer vision,
-      deep learning, and plant phenotyping.
-    </p>
-
-    <p>
-      Throughout my research journey, I have worked
-      with crops including tomatoes, strawberries,
-      barley, and wheat, applying image classification,
-      object detection, and instance segmentation
-      techniques. My work includes developing and
-      adapting YOLO-based models for agricultural
-      applications, as well as exploring multimodal
-      learning approaches that integrate genomic,
-      near-field imaging, UAV, and environmental
-      data to better understand and predict plant traits.
-    </p>
-
-    <p>
-      <strong>
-        What connects these different stages of my
-        career is a continuing desire to turn
-        curiosity into knowledge, and knowledge
-        into solutions that matter.
-      </strong>
-    </p>
-
-    <h2>Beyond Research</h2>
-
-    <p>
-      Science is an important part of who I am,
-      but my curiosity extends far beyond the laboratory.
-    </p>
-
-    <p>
-      I have always been fascinated by the deeper
-      questions of human existence: Why are we here?
-      What does it mean to truly know ourselves?
-      And how do our experiences shape our
-      understanding of life?
-    </p>
-
-    <p>
-      Psychology, philosophy, self-discovery,
-      and reflections on near-death experiences
-      are among the subjects that continually
-      inspire my thinking.
-    </p>
-
-    <p>
-      Nature has a special place in my life.
-      Hiking and spending time in the mountains
-      remind me what it feels like to be truly alive.
-      Gentle music, physical exercise, and quiet
-      moments help me begin each day with a clearer
-      mind and renewed energy. Meditation is
-      particularly meaningful to me; in stillness,
-      I find a way to listen more deeply to myself
-      and to the world around me. 
-      <p>
-  <strong>
-   
-“Material possessions, emotional attachments, fear, and societal expectations can become invisible chains that imprison the soul in a golden cage. True freedom begins when we find the courage to break those chains, let go of what we fear losing, and become as light as a feather—unbound by possessions, expectations, or the need to belong. For a soul that has learned to let go needs no cage, no permission, and no wings to be free.”
-  </strong>
-</p>
-      
-      There is one saying
-      that has always brought me a profound sense of peace:
-    </p>
-
-    <blockquote class="personal-quote">
-      “Die before you die.”
-    </blockquote>
-
-    <p>
-      For me, these words are not about physical death,
-      but about letting go of fear, ego, and the
-      identities that prevent us from living
-      authentically. They are a reminder that growth
-      often begins when we find the courage to release
-      what no longer serves us.
-    </p>
-
-    <p>
-      I believe that life, much like science,
-      is an ongoing journey of questioning,
-      discovering, transforming, and becoming.
-    </p>
-
-  </div>
-</section>
-
-<!-- RESEARCH -->
-
-<section id="research" class="content-section">
-
-  <p class="section-kicker">Areas of Expertise</p>
-  <h2>Research Interests</h2>
-
-  <div class="cards">
-
-    <article class="card">
-      <h3>Computer Vision</h3>
-      <p>
-        Object detection, instance segmentation,
-        and image-based crop analysis.
-      </p>
-    </article>
-
-    <article class="card">
-      <h3>Plant Phenotyping</h3>
-      <p>
-        High-throughput phenotyping and
-        quantitative crop trait estimation.
-      </p>
-    </article>
-
-    <article class="card">
-      <h3>Multimodal AI</h3>
-      <p>
-        Integration of UAV imagery, near-field
-        imaging, and genomic information.
-      </p>
-    </article>
-
-  </div>
-</section>
-
-<!-- PROJECTS -->
-
-<section id="projects" class="content-section">
-
-  <p class="section-kicker">Selected Work</p>
-  <h2>Selected Research Projects</h2>
-
-  <div class="cards two">
-
-    <article class="card">
-      <h3>Wheat Spike Instance Segmentation</h3>
-      <p>
-        Deep learning for wheat spike detection,
-        segmentation, and grain yield estimation.
-      </p>
-    </article>
-
-    <article class="card">
-      <h3>Multimodal Crop Trait Prediction</h3>
-      <p>
-        Combining UAV time-series, ground imagery,
-        and SNP markers for crop trait prediction.
-      </p>
-    </article>
-
-  </div>
-</section>
-
-<!-- PUBLICATIONS -->
-
-<section id="publications" class="content-section">
-
-  <p class="section-kicker">Scientific Output</p>
-  <h2>Selected Publications</h2>
-
-  <div class="publications">
-
-    <article class="publication">
-      <span class="pub-year">2026</span>
-      <div>
-        <h3>
-          An Integrated YOLOv11-Based Framework for
-          Wheat Spike Phenotyping Segmentation and
-          Grain Yield Estimation
-        </h3>
-        <p class="pub-authors">
-          Solimani, F. et al. (2026).
-        </p>
-        <p>
-          <em>Smart Agricultural Technology, 102370.</em>
-          Development and validation of a YOLOv11-based
-          image-analysis framework integrating segmentation
-          and quantitative downstream analysis.
-        </p>
-        <a class="inline-link"
-           href="https://doi.org/10.1016/j.atech.2026.102370"
-           target="_blank" rel="noopener noreferrer">
-          View Publication ↗
-        </a>
-      </div>
-    </article>
-
-<article class="publication">
-      <span class="pub-year">2026</span>
-      <div>
-        <h3>
-          Early Career Professionals and Global Inclusion
-          for the Future of Plant Phenomics
-        </h3>
-        <p class="pub-authors">
-          Robles-Zazueta, C.A. et al.,
-          including F. Solimani (2026).
-        </p>
-        <p>
-          <em>
-            Journal of Experimental Botany,
-            2026, erag371.
-          </em>
-        </p>
-        <a class="inline-link"
-           href="https://doi.org/10.1093/jxb/erag371"
-           target="_blank" rel="noopener noreferrer">
-          View Publication ↗
-        </a>
-      </div>
-    </article>
-
-
-<article class="publication">
-  <span class="pub-year">2025</span>
-  <div>
-    <h3>
-      Innovative Methodologies in Agriculture for
-      High-Throughput Plant Phenomics Using Computer
-      Vision and Artificial Intelligence
-    </h3>
-
-    <p class="pub-authors">
-      Solimani, F. (2025).
-    </p>
-
-    <p>
-      <strong>PhD Thesis</strong> |
-      <em>Politecnico di Bari, Italy.</em>
-    </p>
-
-    <p>
-      Doctoral research on high-throughput plant
-      phenotyping using computer vision and artificial
-      intelligence, including deep learning, YOLO-based
-      object detection, data balancing, and model
-      architecture optimization.
-    </p>
-
-    <a class="inline-link"
-       href="https://tesidottorato.depositolegale.it/handle/20.500.14242/187994"
-       target="_blank"
-       rel="noopener noreferrer">
-      View PhD Thesis ↗
-    </a>
-  </div>
-</article>
-
-
-
-
-    
-    <article class="publication">
-      <span class="pub-year">2024</span>
-      <div>
-        <h3>
-          Optimizing Tomato Plant Phenotyping Detection:
-          Boosting YOLOv8 Architecture to Tackle
-          Data Complexity
-        </h3>
-        <p class="pub-authors">
-          Solimani, F. et al. (2024).
-        </p>
-        <p>
-          <em>
-            Computers and Electronics in Agriculture,
-            218, 108728.
-          </em>
-          Development and evaluation of modified
-          YOLOv8 architectures for robust object detection
-          under complex imaging conditions.
-        </p>
-        <a class="inline-link"
-           href="https://doi.org/10.1016/j.compag.2024.108728"
-           target="_blank" rel="noopener noreferrer">
-          View Publication ↗
-        </a>
-      </div>
-    </article>
-
-    <article class="publication">
-      <span class="pub-year">2024</span>
-      <div>
-        <h3>
-          Enhancing Small Object Detection in YOLOv8:
-          Model Head Adaptations Analysis
-        </h3>
-        <p class="pub-authors">
-          Solimani, F. et al. (2024).
-        </p>
-        <p>
-          <em>IEEE CASE 2024.</em>
-          Evaluation and modification of deep-learning
-          detector architectures for small-object detection.
-        </p>
-        <a class="inline-link"
-           href="https://doi.org/10.1109/CASE59546.2024.10711401"
-           target="_blank" rel="noopener noreferrer">
-          View Publication ↗
-        </a>
-      </div>
-    </article>
-
-    <article class="publication">
-      <span class="pub-year">2023</span>
-      <div>
-        <h3>
-          A Systematic Review of Effective Hardware
-          and Software Factors Affecting
-          High-Throughput Plant Phenotyping
-        </h3>
-        <p class="pub-authors">
-          Solimani, F. et al. (2023).
-        </p>
-        <p>
-          <em>Information, 14(4), 214.</em>
-          Review of imaging hardware, computational methods,
-          image-analysis pipelines, and automated
-          phenotyping systems.
-        </p>
-        <a class="inline-link"
-           href="https://doi.org/10.3390/info14040214"
-           target="_blank" rel="noopener noreferrer">
-          View Publication ↗
-        </a>
-      </div>
-    </article>
-
-    <article class="publication">
-      <span class="pub-year">2023</span>
-      <div>
-        <h3>
-          Detection of Tomato Plant Phenotyping Traits
-          Using YOLOv5-Based Single Stage Detectors
-        </h3>
-        <p class="pub-authors">
-          Cardellicchio, A., Solimani, F.,
-          Dimauro, G., Petrozza, A., Summerer, S.,
-          Cellini, F., &amp; Renò, V. (2023).
-        </p>
-        <p>
-          <em>
-            Computers and Electronics in Agriculture,
-            207, 107757.
-          </em>
-          Application and evaluation of YOLO-based
-          single-stage detectors for automated image analysis.
-        </p>
-        <a class="inline-link"
-           href="https://doi.org/10.1016/j.compag.2023.107757"
-           target="_blank" rel="noopener noreferrer">
-          View Publication ↗
-        </a>
-      </div>
-    </article>
-
-    <article class="publication">
-      <span class="pub-year">2022</span>
-      <div>
-        <h3>
-          Patch-Based Probabilistic Identification of
-          Plant Roots Using Convolutional Neural Networks
-        </h3>
-        <p class="pub-authors">
-          Cardellicchio, A., Solimani, F.,
-          Dimauro, G., Summerer, S.,
-          &amp; Renò, V. (2022).
-        </p>
-        <p>
-          <em>Pattern Recognition Letters.</em>
-          CNN-based probabilistic image identification
-          using patch-level image analysis.
-        </p>
-        <a class="inline-link"
-           href="https://doi.org/10.1016/j.patrec.2024.05.010"
-           target="_blank" rel="noopener noreferrer">
-          View Publication ↗
-        </a>
-      </div>
-    </article>
-
-    
-    <article class="publication">
-      <span class="pub-year">2022</span>
-      <div>
-        <h3>
-          Influence of Nozzle Type, Air-Assisted Velocity,
-          and Wind Velocity on Spray Drift in Boom Sprayers
-        </h3>
-        <p class="pub-authors">
-          Solimani, F. et al. (2022).
-        </p>
-        <p>
-          <em>CIGR Journal, 24(2).</em>
-        </p>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact" class="content-section">
-
-  <p class="section-kicker">Get in Touch</p>
-  <h2>Contact</h2>
-
-  <div class="contact-grid">
-
-    <div class="contact-panel">
-      <h3>Affiliation</h3>
-
-      <p>
-        Consiglio per la ricerca in agricoltura
-        e l’analisi dell’economia agraria (CREA),
-        Centro di Ricerca Cerealicoltura
-        e Colture Industriali (CREA-CI),
-        S.S. 673 Metri 25200,
-        Foggia, 71122, Italy
-      </p>
-
-     
-    </div>
-
-    <div class="contact-panel">
-      <h3>Email &amp; Academic Profiles</h3>
-
-      <p>
-        <a href="mailto:firozeh.solimani@crea.gov.it">
-          firozeh.solimani@crea.gov.it
-        </a>
-      </p>
-
-      <p>
-        <a href="mailto:firozeh.solimani@stiima.cnr.it">
-          firozeh.solimani@stiima.cnr.it
-        </a>
-      </p>
-
-      <p>
-        <a href="mailto:firozeh.s22@gmail.com">
-          firozeh.s22@gmail.com
-        </a>
-      </p>
-
-      <p>
-        <a href="https://scholar.google.com/citations?user=FIUph54AAAAJ&amp;hl=en"
-           target="_blank" rel="noopener noreferrer">
-          Google Scholar ↗
-        </a>
-      </p>
-
-      <p>
-        <a href="https://www.linkedin.com/in/%F0%9D%91%AD%F0%9D%99%9E%F0%9D%92%93%F0%9D%99%A4%F0%9D%92%9B%F0%9D%99%9A%F0%9D%92%89-s-23704219b/"
-           target="_blank" rel="noopener noreferrer">
-          LinkedIn ↗
-        </a>
-      </p>
 
     </div>
-  </div>
-</section>
+  </nav>
 
-</main>
+  <!-- HERO -->
 
-<footer>
-  © 2026 Firozeh Solimani | Academic Research Portfolio
-</footer>
+  <header class="hero" id="home">
+    <div class="container hero-inner">
+
+      <div class="hero-text">
+
+        <div class="eyebrow">
+          Research • Innovation • Discovery
+        </div>
+
+        <h1>Firozeh Solimani</h1>
+
+        <p class="role">Researcher (PostDoc)</p>
+
+        <p class="specialties">
+          Plant Phenotyping | Deep Learning |
+          Computer Vision | Machine Learning |
+          UAS and Satellite Systems | Genetics
+        </p>
+
+        <p class="hero-intro">
+          Advancing agricultural research through
+          intelligent imaging and data-driven technologies.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button" href="#research">
+            Explore My Research
+          </a>
+
+          <a class="button secondary" href="#publications">
+            Publications
+          </a>
+        </div>
+
+      </div>
+
+      <div class="hero-photo">
+        <img
+          src="./profile.jpg.jpeg"
+          alt="Firozeh Solimani"
+          class="profile-photo"
+          width="300"
+          height="300"
+        >
+      </div>
+
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ABOUT -->
+
+    <section id="about" class="content-section">
+
+      <p class="section-kicker">My Story</p>
+
+      <div class="prose">
+
+        <h2>About Me</h2>
+
+        <p>
+          <strong>
+            My journey into science began with a simple
+            aspiration: to make a meaningful difference
+            in the lives of farmers in my hometown.
+          </strong>
+        </p>
+
+        <p>
+          I began my academic journey with
+          <strong>
+            a Bachelor's degree in Rural Development
+            and Management Engineering
+          </strong>,
+          driven by a desire to understand and address
+          the challenges facing my rural community.
+          During an internship at a local agricultural
+          machinery center, I discovered a growing
+          fascination with agricultural machinery design.
+          Seeing the difficulties farmers faced,
+          particularly during harvesting, inspired me
+          to imagine machines and tools that could reduce
+          their physical burden and make agricultural
+          work more efficient.
+        </p>
+
+        <p>
+          This curiosity led me to pursue
+          <strong>
+            a Master's degree in Biosystems Engineering
+            at Khuzestan University of Agricultural
+            Sciences and Natural Resources, Iran
+          </strong>,
+          where I worked on the design of air-assisted
+          nozzles for boom sprayers using SolidWorks.
+          It was an opportunity to turn practical
+          agricultural challenges into engineering solutions.
+        </p>
+
+        <p>
+          Over time, however, my curiosity expanded
+          beyond machinery. I became increasingly
+          interested in how biology, data science,
+          and emerging technologies could come together
+          to transform agricultural research.
+          This ambition brought me to Italy, where
+          I pursued
+          <strong>
+            a PhD in Industry 4.0 at Politecnico di Bari,
+            Italy
+          </strong>.
+          I completed my doctoral research in October 2024
+          and successfully defended my dissertation
+          in January 2025.
+        </p>
+
+        <p>
+          Today, I am a
+          <strong>
+            Postdoctoral Researcher at CREA – Research
+            Centre for Cereal and Industrial Crops, Italy
+          </strong>,
+          where I continue exploring the intersection
+          of artificial intelligence, computer vision,
+          deep learning, and plant phenotyping.
+        </p>
+
+        <p>
+          Throughout my research journey, I have worked
+          with crops including tomatoes, strawberries,
+          barley, and wheat, applying image classification,
+          object detection, and instance segmentation
+          techniques. My work includes developing and
+          adapting YOLO-based models for agricultural
+          applications, as well as exploring multimodal
+          learning approaches that integrate genomic,
+          near-field imaging, UAV, and environmental
+          data to better understand and predict plant traits.
+        </p>
+
+        <p>
+          <strong>
+            What connects these different stages of my
+            career is a continuing desire to turn
+            curiosity into knowledge, and knowledge
+            into solutions that matter.
+          </strong>
+        </p>
+
+        <h2>Beyond Research</h2>
+
+        <p>
+          Science is an important part of who I am,
+          but my curiosity extends far beyond the laboratory.
+        </p>
+
+        <p>
+          I have always been fascinated by the deeper
+          questions of human existence: Why are we here?
+          What does it mean to truly know ourselves?
+          And how do our experiences shape our
+          understanding of life?
+        </p>
+
+        <p>
+          Psychology, philosophy, self-discovery,
+          and reflections on near-death experiences
+          are among the subjects that continually
+          inspire my thinking.
+        </p>
+
+        <p>
+          Nature has a special place in my life.
+          Hiking and spending time in the mountains
+          remind me what it feels like to be truly alive.
+          Gentle music, physical exercise, and quiet
+          moments help me begin each day with a clearer
+          mind and renewed energy. Meditation is
+          particularly meaningful to me; in stillness,
+          I find a way to listen more deeply to myself
+          and to the world around me.
+        </p>
+
+        <p>
+          <strong>
+            “Material possessions, emotional attachments,
+            fear, and societal expectations can become
+            invisible chains that imprison the soul
+            in a golden cage. True freedom begins when
+            we find the courage to break those chains,
+            let go of what we fear losing, and become
+            as light as a feather—unbound by possessions,
+            expectations, or the need to belong.
+            For a soul that has learned to let go
+            needs no cage, no permission, and no wings
+            to be free.”
+          </strong>
+        </p>
+
+        <p>
+          There is one saying that has always brought
+          me a profound sense of peace:
+        </p>
+
+        <blockquote class="personal-quote">
+          “Die before you die.”
+        </blockquote>
+
+        <p>
+          For me, these words are not about physical death,
+          but about letting go of fear, ego, and the
+          identities that prevent us from living
+          authentically. They are a reminder that growth
+          often begins when we find the courage to release
+          what no longer serves us.
+        </p>
+
+        <p>
+          I believe that life, much like science,
+          is an ongoing journey of questioning,
+          discovering, transforming, and becoming.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+
+    <section id="research" class="content-section">
+
+      <p class="section-kicker">Areas of Expertise</p>
+      <h2>Research Interests</h2>
+
+      <div class="cards">
+
+        <article class="card">
+          <h3>Computer Vision</h3>
+          <p>
+            Object detection, instance segmentation,
+            and image-based crop analysis.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Plant Phenotyping</h3>
+          <p>
+            High-throughput phenotyping and
+            quantitative crop trait estimation.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Multimodal AI</h3>
+          <p>
+            Integration of UAV imagery, near-field
+            imaging, and genomic information.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects" class="content-section">
+
+      <p class="section-kicker">Selected Work</p>
+      <h2>Selected Research Projects</h2>
+
+      <div class="cards two">
+
+        <article class="card">
+          <h3>Wheat Spike Instance Segmentation</h3>
+          <p>
+            Deep learning for wheat spike detection,
+            segmentation, and grain yield estimation.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Multimodal Crop Trait Prediction</h3>
+          <p>
+            Combining UAV time-series, ground imagery,
+            and SNP markers for crop trait prediction.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CONFERENCES -->
+
+    <section id="conferences" class="content-section">
+
+      <p class="section-kicker">Scientific Engagement</p>
+      <h2>Conferences &amp; Scientific Presentations</h2>
+
+      <p class="conference-intro">
+        Presenting research, exchanging scientific ideas,
+        and contributing to the international research
+        community through conferences, scientific
+        presentations, and leadership activities.
+      </p>
+
+      <div class="cards two">
+
+        <!-- IPPS9 2026 -->
+
+        <article class="card conference-card">
+
+          <p class="section-kicker">
+            2026 | International Symposium
+          </p>
+
+          <h3>
+            9th International Plant Phenotyping
+            Symposium (IPPS9)
+          </h3>
+
+          <p>
+            <strong>Accra, Ghana</strong><br>
+            12–16 October 2026
+          </p>
+
+          <p>
+            <strong>Roles:</strong>
+            Oral Presenter, ECPN Session Co-Chair,
+            and Community Leadership.
+          </p>
+
+        </article>
+
+        <!-- IWC4 2026 -->
+
+        <article class="card conference-card">
+
+          <p class="section-kicker">
+            2026 | Wheat Research
+          </p>
+
+          <h3>
+            4th International Wheat Congress (IWC4)
+          </h3>
+
+          <p>
+            <strong>Bologna, Italy</strong><br>
+            2026
+          </p>
+
+          <p>
+            <strong>Conference Contribution:</strong><br>
+            Solimani, F., Mushtaq, N., Fania, F.,
+            Colecchia, S., Laido, G., and Pecchioni, N.
+            (2026).
+          </p>
+
+          <p class="conference-title">
+            An Integrated YOLOv11-Based Framework
+            for Wheat Spike Phenotyping Segmentation
+            and Grain Yield Estimation.
+          </p>
+
+        </article>
+
+        <!-- PHEN-ITALY 2026 -->
+
+        <article class="card conference-card">
+
+          <p class="section-kicker">
+            2026 | Accepted Oral Presentation
+          </p>
+
+          <h3>
+            PHEN-ITALY National Conference
+            on Plant Phenotyping
+          </h3>
+
+          <p>
+            <strong>Portici, Italy</strong><br>
+            26–27 November 2026
+          </p>
+
+          <p>
+            <strong>Status:</strong>
+            Accepted Oral Presentation.
+          </p>
+
+          <p>
+            <strong>Session:</strong>
+            Emerging Voices in Plant Phenotyping Research.
+          </p>
+
+        </article>
+
+        <!-- IEEE CASE 2024 -->
+
+        <article class="card conference-card">
+
+          <p class="section-kicker">
+            2024 | IEEE Conference Paper
+          </p>
+
+          <h3>
+            2024 IEEE 20th International Conference
+            on Automation Science and Engineering (CASE)
+          </h3>
+
+          <p>
+            <strong>Bari, Italy</strong><br>
+            28 August – 1 September 2024
+          </p>
+
+          <p>
+            <strong>Authors:</strong><br>
+            Solimani, F., Cardellicchio, A.,
+            Dimauro, G., Mininni, A.,
+            Calabritto, M., and Di Biase, R. (2024).
+          </p>
+
+          <p class="conference-title">
+            Enhancing Small Object Detection in the
+            YOLOv8 Model: A Comprehensive Analysis
+            of the Optimized Model Head Adaptations.
+          </p>
+
+          <p>
+            <strong>Research Focus:</strong>
+            YOLOv8 detection-head optimization for
+            small-object detection in strawberry
+            phenotyping.
+          </p>
+
+          <a class="inline-link"
+             href="https://doi.org/10.1109/CASE59546.2024.10711401"
+             target="_blank"
+             rel="noopener noreferrer">
+            View IEEE Conference Paper ↗
+          </a>
+
+        </article>
+
+        <!-- IPPS8 2024 -->
+
+        <article class="card conference-card">
+
+          <p class="section-kicker">
+            2024 | Plant Phenotyping
+          </p>
+
+          <h3>
+            8th International Plant Phenotyping
+            Symposium (IPPS8)
+          </h3>
+
+          <p>
+            <strong>October 2024</strong>
+          </p>
+
+          <p>
+            <strong>Authors:</strong><br>
+            Solimani, F. et al. (2024).
+          </p>
+
+          <p class="conference-title">
+            Reinforce Small Object Detection in
+            Complex Plant Phenotyping Data:
+            Optimizing Single-Stage Detectors.
+          </p>
+
+          <a class="inline-link"
+             href="https://www.linkedin.com/in/%F0%9D%91%AD%F0%9D%99%9E%F0%9D%92%93%F0%9D%99%A4%F0%9D%92%9B%F0%9D%99%9A%F0%9D%92%89-s-23704219b/overlay/Certifications/1363442306/treasury/?profileId=ACoAAC7QQssBN57WJKeR7sWwJaopAmbNhAU2tQY"
+             target="_blank"
+             rel="noopener noreferrer">
+            Certificate of Attendance ↗
+          </a>
+
+        </article>
+
+        <!-- IPPS7 2022 -->
+
+        <article class="card conference-card">
+
+          <p class="section-kicker">
+            2022 | Plant Phenotyping
+          </p>
+
+          <h3>
+            7th International Plant Phenotyping
+            Symposium (IPPS7)
+          </h3>
+
+          <p>
+            <strong>October 2022</strong>
+          </p>
+
+          <p>
+            <strong>Authors:</strong><br>
+            Renò, V., Petrozza, A., Summerer, S.,
+            Cellini, F., Solimani, F., Dimauro, G.,
+            and Nitti, M. (2022).
+          </p>
+
+          <p class="conference-title">
+            A Compact, Low-Cost, and Portable
+            Hardware/Software System for
+            3D Plant Phenotyping.
+          </p>
+
+          <a class="inline-link"
+             href="https://www.linkedin.com/in/%F0%9D%91%AD%F0%9D%99%9E%F0%9D%92%93%F0%9D%99%A4%F0%9D%99%9A%F0%9D%92%89-s-23704219b/overlay/Certifications/1363370340/treasury/?profileId=ACoAAC7QQssBN57WJKeR7sWwJaopAmbNhAU2tQY"
+             target="_blank"
+             rel="noopener noreferrer">
+            Certificate of Attendance ↗
+          </a>
+
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+
+    <section id="publications" class="content-section">
+
+      <p class="section-kicker">Scientific Output</p>
+      <h2>Selected Publications</h2>
+
+      <div class="publications">
+
+        <!-- PUBLICATION 1 -->
+
+        <article class="publication">
+          <span class="pub-year">2026</span>
+
+          <div>
+            <h3>
+              An Integrated YOLOv11-Based Framework for
+              Wheat Spike Phenotyping Segmentation and
+              Grain Yield Estimation
+            </h3>
+
+            <p class="pub-authors">
+              Solimani, F. et al. (2026).
+            </p>
+
+            <p>
+              <em>Smart Agricultural Technology, 102370.</em>
+              Development and validation of a YOLOv11-based
+              image-analysis framework integrating segmentation
+              and quantitative downstream analysis.
+            </p>
+
+            <a class="inline-link"
+               href="https://doi.org/10.1016/j.atech.2026.102370"
+               target="_blank"
+               rel="noopener noreferrer">
+              View Publication ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- PUBLICATION 2 -->
+
+        <article class="publication">
+          <span class="pub-year">2026</span>
+
+          <div>
+            <h3>
+              Early Career Professionals and Global Inclusion
+              for the Future of Plant Phenomics
+            </h3>
+
+            <p class="pub-authors">
+              Robles-Zazueta, C.A. et al.,
+              including F. Solimani (2026).
+            </p>
+
+            <p>
+              <em>
+                Journal of Experimental Botany,
+                2026, erag371.
+              </em>
+            </p>
+
+            <a class="inline-link"
+               href="https://doi.org/10.1093/jxb/erag371"
+               target="_blank"
+               rel="noopener noreferrer">
+              View Publication ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- PHD THESIS -->
+
+        <article class="publication">
+          <span class="pub-year">2025</span>
+
+          <div>
+            <h3>
+              Innovative Methodologies in Agriculture for
+              High-Throughput Plant Phenomics Using Computer
+              Vision and Artificial Intelligence
+            </h3>
+
+            <p class="pub-authors">
+              Solimani, F. (2025).
+            </p>
+
+            <p>
+              <strong>PhD Thesis</strong> |
+              <em>Politecnico di Bari, Italy.</em>
+            </p>
+
+            <p>
+              Doctoral research on high-throughput plant
+              phenotyping using computer vision and artificial
+              intelligence, including deep learning, YOLO-based
+              object detection, data balancing, and model
+              architecture optimization.
+            </p>
+
+            <a class="inline-link"
+               href="https://tesidottorato.depositolegale.it/handle/20.500.14242/187994"
+               target="_blank"
+               rel="noopener noreferrer">
+              View PhD Thesis ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- PUBLICATION 4 -->
+
+        <article class="publication">
+          <span class="pub-year">2024</span>
+
+          <div>
+            <h3>
+              Optimizing Tomato Plant Phenotyping Detection:
+              Boosting YOLOv8 Architecture to Tackle
+              Data Complexity
+            </h3>
+
+            <p class="pub-authors">
+              Solimani, F. et al. (2024).
+            </p>
+
+            <p>
+              <em>
+                Computers and Electronics in Agriculture,
+                218, 108728.
+              </em>
+              Development and evaluation of modified
+              YOLOv8 architectures for robust object detection
+              under complex imaging conditions.
+            </p>
+
+            <a class="inline-link"
+               href="https://doi.org/10.1016/j.compag.2024.108728"
+               target="_blank"
+               rel="noopener noreferrer">
+              View Publication ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- IEEE PUBLICATION -->
+
+        <article class="publication">
+          <span class="pub-year">2024</span>
+
+          <div>
+            <h3>
+              Enhancing Small Object Detection in the
+              YOLOv8 Model: A Comprehensive Analysis
+              of the Optimized Model Head Adaptations
+            </h3>
+
+            <p class="pub-authors">
+              Solimani, F., Cardellicchio, A.,
+              Dimauro, G., Mininni, A.,
+              Calabritto, M., and Di Biase, R. (2024).
+            </p>
+
+            <p>
+              <em>
+                2024 IEEE 20th International Conference
+                on Automation Science and Engineering (CASE).
+              </em>
+              Evaluation and modification of deep-learning
+              detector architectures for small-object detection.
+            </p>
+
+            <a class="inline-link"
+               href="https://doi.org/10.1109/CASE59546.2024.10711401"
+               target="_blank"
+               rel="noopener noreferrer">
+              View Publication ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- PUBLICATION 6 -->
+
+        <article class="publication">
+          <span class="pub-year">2023</span>
+
+          <div>
+            <h3>
+              A Systematic Review of Effective Hardware
+              and Software Factors Affecting
+              High-Throughput Plant Phenotyping
+            </h3>
+
+            <p class="pub-authors">
+              Solimani, F. et al. (2023).
+            </p>
+
+            <p>
+              <em>Information, 14(4), 214.</em>
+              Review of imaging hardware, computational methods,
+              image-analysis pipelines, and automated
+              phenotyping systems.
+            </p>
+
+            <a class="inline-link"
+               href="https://doi.org/10.3390/info14040214"
+               target="_blank"
+               rel="noopener noreferrer">
+              View Publication ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- PUBLICATION 7 -->
+
+        <article class="publication">
+          <span class="pub-year">2023</span>
+
+          <div>
+            <h3>
+              Detection of Tomato Plant Phenotyping Traits
+              Using YOLOv5-Based Single Stage Detectors
+            </h3>
+
+            <p class="pub-authors">
+              Cardellicchio, A., Solimani, F.,
+              Dimauro, G., Petrozza, A., Summerer, S.,
+              Cellini, F., &amp; Renò, V. (2023).
+            </p>
+
+            <p>
+              <em>
+                Computers and Electronics in Agriculture,
+                207, 107757.
+              </em>
+              Application and evaluation of YOLO-based
+              single-stage detectors for automated image analysis.
+            </p>
+
+            <a class="inline-link"
+               href="https://doi.org/10.1016/j.compag.2023.107757"
+               target="_blank"
+               rel="noopener noreferrer">
+              View Publication ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- PUBLICATION 8 -->
+
+        <article class="publication">
+          <span class="pub-year">2022</span>
+
+          <div>
+            <h3>
+              Patch-Based Probabilistic Identification of
+              Plant Roots Using Convolutional Neural Networks
+            </h3>
+
+            <p class="pub-authors">
+              Cardellicchio, A., Solimani, F.,
+              Dimauro, G., Summerer, S.,
+              &amp; Renò, V. (2022).
+            </p>
+
+            <p>
+              <em>Pattern Recognition Letters.</em>
+              CNN-based probabilistic image identification
+              using patch-level image analysis.
+            </p>
+
+            <a class="inline-link"
+               href="https://doi.org/10.1016/j.patrec.2024.05.010"
+               target="_blank"
+               rel="noopener noreferrer">
+              View Publication ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- PUBLICATION 9 -->
+
+        <article class="publication">
+          <span class="pub-year">2022</span>
+
+          <div>
+            <h3>
+              Influence of Nozzle Type, Air-Assisted Velocity,
+              and Wind Velocity on Spray Drift in Boom Sprayers
+            </h3>
+
+            <p class="pub-authors">
+              Solimani, F. et al. (2022).
+            </p>
+
+            <p>
+              <em>CIGR Journal, 24(2).</em>
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="content-section">
+
+      <p class="section-kicker">Get in Touch</p>
+      <h2>Contact</h2>
+
+      <div class="contact-grid">
+
+        <div class="contact-panel">
+
+          <h3>Affiliation</h3>
+
+          <p>
+            Consiglio per la ricerca in agricoltura
+            e l’analisi dell’economia agraria (CREA),
+            Centro di Ricerca Cerealicoltura
+            e Colture Industriali (CREA-CI),
+            S.S. 673 Metri 25200,
+            Foggia, 71122, Italy
+          </p>
+
+        </div>
+
+        <div class="contact-panel">
+
+          <h3>Email &amp; Academic Profiles</h3>
+
+          <p>
+            <a href="mailto:firozeh.solimani@crea.gov.it">
+              firozeh.solimani@crea.gov.it
+            </a>
+          </p>
+
+          <p>
+            <a href="mailto:firozeh.solimani@stiima.cnr.it">
+              firozeh.solimani@stiima.cnr.it
+            </a>
+          </p>
+
+          <p>
+            <a href="mailto:firozeh.s22@gmail.com">
+              firozeh.s22@gmail.com
+            </a>
+          </p>
+
+          <p>
+            <a href="https://scholar.google.com/citations?user=FIUph54AAAAJ&amp;hl=en"
+               target="_blank"
+               rel="noopener noreferrer">
+              Google Scholar ↗
+            </a>
+          </p>
+
+          <p>
+            <a href="https://www.linkedin.com/in/%F0%9D%91%AD%F0%9D%99%9E%F0%9D%92%93%F0%9D%99%A4%F0%9D%92%9B%F0%9D%99%9A%F0%9D%92%89-s-23704219b/"
+               target="_blank"
+               rel="noopener noreferrer">
+              LinkedIn ↗
+            </a>
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Firozeh Solimani | Academic Research Portfolio
+  </footer>
 
 </body>
 </html>
