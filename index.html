@@ -1,22 +1,27 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Academic portfolio of Firozeh Solimani, researcher in artificial intelligence, computer vision and plant phenotyping.">
-
-<meta name="google-site-verification" content="RJyu_HihEz_NsIWs3Kt9qSAAT2_62MI_On8Qb6tiqtw" />
 
 <title>Firozeh Solimani | Research Portfolio</title>
-<style>
 
+<meta name="description" content="Academic portfolio of Firozeh Solimani, researcher in artificial intelligence, computer vision and plant phenotyping.">
+
+<meta name="google-site-verification" content="RJyu_HihEz_NsIWs3Kt9qSAAT2_62MI_On8Qb6tiqtw">
+
+<meta name="theme-color" content="#102c40">
+
+<style>
 :root {
   --navy: #102c40;
   --teal: #087e83;
-  --light: #f4f8f9;
-  --text: #273b48;
+  --ink: #253947;
+  --muted: #607482;
+  --pale: #f4f8f9;
+  --line: #e0e9ed;
+  --white: #ffffff;
 }
 
 * {
@@ -29,84 +34,150 @@ html {
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--text);
-  line-height: 1.7;
-}
-
-/* NAVIGATION */
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  padding: 20px 7%;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.75;
   background: white;
-}
-
-.brand {
-  font-weight: bold;
-  color: var(--navy);
-}
-
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
 }
 
 a {
   color: var(--teal);
 }
 
-.links a {
+.container {
+  width: min(1120px, 88%);
+  margin: auto;
+}
+
+/* NAVIGATION */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  min-height: 76px;
+}
+
+.brand {
+  font-size: 1rem;
+  letter-spacing: .11em;
+  font-weight: 800;
   text-decoration: none;
   color: var(--navy);
 }
 
-/* HERO SECTION */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 23px;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--navy);
+  font-size: .89rem;
+  font-weight: 600;
+}
+
+.links a:hover {
+  color: var(--teal);
+}
+
+/* HERO */
 
 .hero {
-  background: linear-gradient(120deg, #102c40, #087e83);
+  background:
+    radial-gradient(
+      circle at 86% 20%,
+      rgba(70,191,174,.20),
+      transparent 30%
+    ),
+    linear-gradient(
+      125deg,
+      #102c40 0%,
+      #153e50 57%,
+      #087e83 100%
+    );
   color: white;
-  padding: 90px 8%;
 }
 
-.hero-content {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 300px;
   align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-}
-
-.hero-text {
-  flex: 1;
-  min-width: 0;
-}
-
-.hero h1 {
-  font-size: clamp(38px, 6vw, 70px);
-  line-height: 1.15;
-  margin: 15px 0;
-}
-
-.hero p {
-  max-width: 700px;
-  font-size: 19px;
+  gap: 75px;
+  padding: 100px 0;
 }
 
 .eyebrow {
+  font-size: .78rem;
+  letter-spacing: .2em;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 13px;
-  color: #91f0dc;
+  font-weight: 700;
+  color: #a5efe3;
 }
 
-/* CIRCULAR PROFILE PHOTO */
+.hero h1 {
+  font-size: clamp(2.7rem,5.5vw,4.9rem);
+  letter-spacing: -.045em;
+  line-height: 1.12;
+  margin: 20px 0;
+}
+
+.role {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.specialties {
+  color: #d0efed;
+  font-size: 1.02rem;
+}
+
+.hero-intro {
+  font-size: 1.12rem;
+  max-width: 660px;
+  color: #edf8f8;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: white;
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid white;
+  transition: transform .2s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button.secondary {
+  background: transparent;
+  color: white;
+}
+
+/* PROFILE PHOTO */
 
 .profile-photo {
   width: 300px;
@@ -114,100 +185,194 @@ a {
   border-radius: 50%;
   object-fit: cover;
   object-position: center 20%;
-  border: 6px solid white;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.28);
+  border: 7px solid white;
+  box-shadow: 0 20px 60px rgba(0,29,45,.5);
   display: block;
 }
 
-.hero-photo {
-  flex-shrink: 0;
-}
-
-/* BUTTONS */
-
-.button {
-  display: inline-block;
-  margin: 15px 12px 0 0;
-  padding: 12px 22px;
-  background: white;
-  color: var(--navy);
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: transform 0.2s, background 0.2s;
-}
-
-.button:hover {
-  background: #d8f5ef;
-  transform: translateY(-2px);
-}
-
-/* MAIN CONTENT */
+/* CONTENT */
 
 main {
-  max-width: 1100px;
-  margin: auto;
-  padding: 30px 24px;
+  padding-bottom: 40px;
 }
 
-section {
-  padding: 55px 0;
-  scroll-margin-top: 25px;
+.content-section {
+  padding: 74px 0;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 85px;
 }
 
-h2 {
+.section-kicker {
+  font-size: .76rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 800;
+  margin: 0 0 7px;
+}
+
+.content-section h2 {
   color: var(--navy);
-  font-size: 30px;
+  font-size: clamp(1.8rem,3vw,2.5rem);
+  letter-spacing: -.035em;
+  line-height: 1.25;
+  margin: 0 0 28px;
 }
 
-.grid {
+.content-section h2:not(:first-child) {
+  margin-top: 45px;
+}
+
+.prose {
+  max-width: 850px;
+}
+
+.prose p {
+  margin: 0 0 20px;
+}
+
+.personal-quote {
+  margin: 28px 0;
+  padding: 16px 25px;
+  border-left: 4px solid var(--teal);
+  background: var(--pale);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--navy);
+}
+
+/* RESEARCH CARDS */
+
+.cards {
   display: grid;
-  grid-template-columns:
-    repeat(auto-fit, minmax(240px, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 20px;
+}
+
+.cards.two {
+  grid-template-columns: repeat(2,minmax(0,1fr));
 }
 
 .card {
+  background: var(--pale);
+  border: 1px solid var(--line);
+  border-radius: 14px;
   padding: 26px;
-  background: var(--light);
-  border: 1px solid #e0e9ed;
-  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(16,44,64,.035);
+  transition: transform .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
 }
 
 .card h3 {
+  margin: 0 0 9px;
   color: var(--teal);
+  font-size: 1.16rem;
 }
 
-/* FOOTER */
+.card p {
+  margin: 0;
+}
+
+/* PUBLICATIONS */
+
+.publications {
+  display: grid;
+}
+
+.publication {
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  gap: 20px;
+  padding: 23px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.pub-year {
+  font-size: .85rem;
+  font-weight: 800;
+  color: var(--teal);
+  padding-top: 5px;
+}
+
+.publication h3 {
+  color: var(--navy);
+  font-size: 1.09rem;
+  line-height: 1.45;
+  margin: 0 0 6px;
+}
+
+.publication p {
+  font-size: .93rem;
+  margin: 5px 0;
+  color: var(--muted);
+}
+
+.pub-authors {
+  color: var(--ink) !important;
+}
+
+.inline-link {
+  font-size: .9rem;
+  font-weight: 700;
+  text-underline-offset: 4px;
+}
+
+/* CONTACT */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.contact-panel {
+  border: 1px solid var(--line);
+  background: var(--pale);
+  border-radius: 14px;
+  padding: 26px;
+}
+
+.contact-panel h3 {
+  color: var(--navy);
+  margin-top: 0;
+}
+
+.contact-panel p {
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+}
 
 footer {
-  padding: 28px;
   background: var(--navy);
-  color: white;
+  color: #e8f1f4;
   text-align: center;
+  padding: 30px 18px;
+  font-size: .91rem;
 }
 
-/* MOBILE RESPONSIVE DESIGN */
+/* MOBILE */
 
-@media (max-width: 800px) {
-
-  .hero {
-    padding: 65px 7%;
+@media (max-width: 850px) {
+  .nav-inner {
+    padding: 16px 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 9px;
   }
 
-  .hero-content {
-    flex-direction: column-reverse;
-    text-align: center;
+  .hero-inner {
+    grid-template-columns: 1fr;
     gap: 35px;
-  }
-
-  .hero-text {
-    width: 100%;
+    text-align: center;
+    padding: 65px 0;
   }
 
   .hero-photo {
-    display: flex;
-    justify-content: center;
+    grid-row: 1;
+    justify-self: center;
   }
 
   .profile-photo {
@@ -215,35 +380,53 @@ footer {
     height: 230px;
   }
 
-  .hero h1 {
-    font-size: 42px;
+  .hero-actions {
+    justify-content: center;
   }
 
-  .hero p {
-    margin-left: auto;
-    margin-right: auto;
+  .hero-intro {
+    margin-inline: auto;
   }
 
-  nav {
-    padding: 18px 6%;
+  .cards,
+  .cards.two,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-section {
+    padding: 52px 0;
+    scroll-margin-top: 125px;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
+  .container {
+    width: 90%;
+  }
+
+  .links {
+    gap: 8px 13px;
+  }
+
+  .links a {
+    font-size: .81rem;
+  }
+
   .profile-photo {
-    width: 190px;
-    height: 190px;
+    width: 195px;
+    height: 195px;
+  }
+
+  .publication {
+    grid-template-columns: 1fr;
+    gap: 3px;
   }
 
   .hero h1 {
-    font-size: 35px;
-  }
-
-  .eyebrow {
-    letter-spacing: 1px;
+    font-size: 2.6rem;
   }
 }
-
 </style>
 </head>
 
@@ -251,340 +434,563 @@ footer {
 
 <!-- NAVIGATION -->
 
-<nav>
-  <div class="brand">FIROZEH SOLIMANI</div>
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#home">
+      FIROZEH SOLIMANI
+    </a>
 
-  <div class="links">
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#projects">Projects</a>
-    <a href="#publications">Publications</a>
-    <a href="#contact">Contact</a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
 </nav>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 
-<header class="hero">
-
-  <div class="hero-content">
+<header class="hero" id="home">
+  <div class="container hero-inner">
 
     <div class="hero-text">
-
       <div class="eyebrow">
         Research • Innovation • Discovery
       </div>
 
       <h1>Firozeh Solimani</h1>
 
-      <p>Researcher</p>
+      <p class="role">Researcher</p>
 
-      <p>
-        Plant Phenotyping | Deep Learning | Computer Vision | Machine Learning |
-       UAS and Satellite Systems | Genetics
+      <p class="specialties">
+        Plant Phenotyping | Deep Learning |
+        Computer Vision | Machine Learning |
+        UAS and Satellite Systems | Genetics
       </p>
 
-      <p>
+      <p class="hero-intro">
         Advancing agricultural research through
         intelligent imaging and data-driven technologies.
       </p>
 
-      <a class="button" href="#research">
-        Explore My Research
-      </a>
+      <div class="hero-actions">
+        <a class="button" href="#research">
+          Explore My Research
+        </a>
 
-      <a class="button" href="#publications">
-        Publications
-      </a>
-
+        <a class="button secondary" href="#publications">
+          Publications
+        </a>
+      </div>
     </div>
 
     <div class="hero-photo">
-
-     
-
-<img
-  src="https://firozehsolimani.github.io/firozehsolimani/WhatsApp%20Image%202026-06-05%20at%209.06.03%20AM.jpeg"
-  alt="Firozeh Solimani"
-  class="profile-photo"
->
-
-
-
+      <img
+        src="./WhatsApp%20Image%202026-06-05%20at%209.06.03%20AM.jpeg"
+        alt="Firozeh Solimani"
+        class="profile-photo"
+        width="300"
+        height="300"
+      >
     </div>
 
   </div>
-
 </header>
 
-<!-- MAIN CONTENT -->
+<main class="container">
 
-<main>
+<!-- ABOUT -->
 
-<section id="about">
+<section id="about" class="content-section">
 
+  <p class="section-kicker">My Story</p>
 
-<section id="about">
+  <div class="prose">
 
-  <h2>About Me</h2>
+    <h2>About Me</h2>
 
-  <p>
-    <strong>My journey into science began with a simple
-    aspiration: to make a meaningful difference in the
-    lives of farmers in my hometown.</strong>
-  </p>
+    <p>
+      <strong>
+        My journey into science began with a simple
+        aspiration: to make a meaningful difference
+        in the lives of farmers in my hometown.
+      </strong>
+    </p>
 
-  <p>
-    I began my academic journey with a Bachelor's degree
-    in Rural Development and Management Engineering,
-    driven by a desire to understand and address the
-    challenges facing my rural community.
-    During an internship at a local agricultural machinery
-    center, I discovered a growing fascination with
-    agricultural machinery design.
-    Seeing the difficulties farmers faced, particularly
-    during harvesting, inspired me to imagine machines
-    and tools that could reduce their physical burden
-    and make agricultural work more efficient.
-  </p>
+    <p>
+      I began my academic journey with a Bachelor's
+      degree in Rural Development and Management
+      Engineering, driven by a desire to understand
+      and address the challenges facing my rural
+      community. During an internship at a local
+      agricultural machinery center, I discovered
+      a growing fascination with agricultural
+      machinery design. Seeing the difficulties
+      farmers faced, particularly during harvesting,
+      inspired me to imagine machines and tools
+      that could reduce their physical burden
+      and make agricultural work more efficient.
+    </p>
 
-  <p>
-    This curiosity led me to pursue a Master's degree in
-    <strong>Biosystems Engineering at Khuzestan University
-    of Agricultural Sciences and Natural Resources,
-    Iran</strong>, where I worked on the design of
-    air-assisted nozzles for boom sprayers using SolidWorks.
-    It was an opportunity to turn practical agricultural
-    challenges into engineering solutions.
-  </p>
+    <p>
+      This curiosity led me to pursue a Master's
+      degree in
+      <strong>
+        Biosystems Engineering at Khuzestan University
+        of Agricultural Sciences and Natural Resources,
+        Iran
+      </strong>,
+      where I worked on the design of air-assisted
+      nozzles for boom sprayers using SolidWorks.
+      It was an opportunity to turn practical
+      agricultural challenges into engineering solutions.
+    </p>
 
-  <p>
-    Over time, however, my curiosity expanded beyond
-    machinery. I became increasingly interested in how
-    biology, data science, and emerging technologies
-    could come together to transform agricultural research.
-    This ambition brought me to Italy, where I pursued
-    a PhD in <strong>Industry 4.0 at Politecnico di Bari</strong>.
-    I completed my doctoral research in October 2024
-    and successfully defended my dissertation
-    in January 2025.
-  </p>
+    <p>
+      Over time, however, my curiosity expanded
+      beyond machinery. I became increasingly
+      interested in how biology, data science,
+      and emerging technologies could come together
+      to transform agricultural research.
+      This ambition brought me to Italy, where
+      I pursued a PhD in
+      <strong>Industry 4.0 at Politecnico di Bari</strong>.
+      I completed my doctoral research in October 2024
+      and successfully defended my dissertation
+      in January 2025.
+    </p>
 
-  <p>
-    Today, I am a <strong>Postdoctoral Researcher at
-    CREA – Research Centre for Cereal and Industrial
-    Crops, Italy</strong>, where I continue exploring
-    the intersection of artificial intelligence,
-    computer vision, deep learning, and plant phenotyping.
-  </p>
+    <p>
+      Today, I am a
+      <strong>
+        Postdoctoral Researcher at CREA – Research
+        Centre for Cereal and Industrial Crops, Italy
+      </strong>,
+      where I continue exploring the intersection
+      of artificial intelligence, computer vision,
+      deep learning, and plant phenotyping.
+    </p>
 
-  <p>
-    Throughout my research journey, I have worked with
-    crops including tomatoes, strawberries, barley,
-    and wheat, applying image classification,
-    object detection, and instance segmentation techniques.
-    My work includes developing and adapting YOLO-based
-    models for agricultural applications, as well as
-    exploring multimodal learning approaches that integrate
-    genomic, near-field imaging, UAV, and environmental
-    data to better understand and predict plant traits.
-  </p>
+    <p>
+      Throughout my research journey, I have worked
+      with crops including tomatoes, strawberries,
+      barley, and wheat, applying image classification,
+      object detection, and instance segmentation
+      techniques. My work includes developing and
+      adapting YOLO-based models for agricultural
+      applications, as well as exploring multimodal
+      learning approaches that integrate genomic,
+      near-field imaging, UAV, and environmental
+      data to better understand and predict plant traits.
+    </p>
 
-  <p>
-    <strong>What connects these different stages of my
-    career is a continuing desire to turn curiosity
-    into knowledge, and knowledge into solutions
-    that matter.</strong>
-  </p>
+    <p>
+      <strong>
+        What connects these different stages of my
+        career is a continuing desire to turn
+        curiosity into knowledge, and knowledge
+        into solutions that matter.
+      </strong>
+    </p>
 
-  <h2>Beyond Research</h2>
+    <h2>Beyond Research</h2>
 
-  <p>
-    Science is an important part of who I am,
-    but my curiosity extends far beyond the laboratory.
-  </p>
+    <p>
+      Science is an important part of who I am,
+      but my curiosity extends far beyond the laboratory.
+    </p>
 
-  <p>
-    I have always been fascinated by the deeper questions
-    of human existence: Why are we here? What does it
-    mean to truly know ourselves? And how do our
-    experiences shape our understanding of life?
-  </p>
+    <p>
+      I have always been fascinated by the deeper
+      questions of human existence: Why are we here?
+      What does it mean to truly know ourselves?
+      And how do our experiences shape our
+      understanding of life?
+    </p>
 
-  <p>
-    Psychology, philosophy, self-discovery, and
-    reflections on near-death experiences are among
-    the subjects that continually inspire my thinking.
-  </p>
+    <p>
+      Psychology, philosophy, self-discovery,
+      and reflections on near-death experiences
+      are among the subjects that continually
+      inspire my thinking.
+    </p>
 
-  <p>
-    Nature has a special place in my life.
-    Hiking and spending time in the mountains remind
-    me what it feels like to be truly alive.
-    Gentle music, physical exercise, and quiet moments
-    help me begin each day with a clearer mind
-    and renewed energy.
-    Meditation is particularly meaningful to me;
-    in stillness, I find a way to listen more deeply
-    to myself and to the world around me. There is one saying that has always brought me a profound sense of peace:
-  </p>
+    <p>
+      Nature has a special place in my life.
+      Hiking and spending time in the mountains
+      remind me what it feels like to be truly alive.
+      Gentle music, physical exercise, and quiet
+      moments help me begin each day with a clearer
+      mind and renewed energy. Meditation is
+      particularly meaningful to me; in stillness,
+      I find a way to listen more deeply to myself
+      and to the world around me. There is one saying
+      that has always brought me a profound sense of peace:
+    </p>
 
-  <blockquote class="personal-quote">
-    “Die before you die.”
-  </blockquote>
+    <blockquote class="personal-quote">
+      “Die before you die.”
+    </blockquote>
 
-  <p>
-    For me, these words are not about physical death,
-    but about letting go of fear, ego, and the identities
-    that prevent us from living authentically.
-    They are a reminder that growth often begins
-    when we find the courage to release what
-    no longer serves us.
-  </p>
+    <p>
+      For me, these words are not about physical death,
+      but about letting go of fear, ego, and the
+      identities that prevent us from living
+      authentically. They are a reminder that growth
+      often begins when we find the courage to release
+      what no longer serves us.
+    </p>
 
-  <p>
-    I believe that life, much like science, is an
-    ongoing journey of questioning, discovering,
-    transforming, and becoming.
-  </p>
+    <p>
+      I believe that life, much like science,
+      is an ongoing journey of questioning,
+      discovering, transforming, and becoming.
+    </p>
 
+  </div>
 </section>
 
+<!-- RESEARCH -->
 
-</section>
+<section id="research" class="content-section">
 
-<section id="research">
-
+  <p class="section-kicker">Areas of Expertise</p>
   <h2>Research Interests</h2>
 
-  <div class="grid">
+  <div class="cards">
 
-    <div class="card">
+    <article class="card">
       <h3>Computer Vision</h3>
       <p>
-        Object detection, instance segmentation
+        Object detection, instance segmentation,
         and image-based crop analysis.
       </p>
-    </div>
+    </article>
 
-    <div class="card">
+    <article class="card">
       <h3>Plant Phenotyping</h3>
       <p>
         High-throughput phenotyping and
         quantitative crop trait estimation.
       </p>
-    </div>
+    </article>
 
-    <div class="card">
+    <article class="card">
       <h3>Multimodal AI</h3>
       <p>
         Integration of UAV imagery, near-field
-        imaging and genomic information.
+        imaging, and genomic information.
       </p>
-    </div>
+    </article>
 
   </div>
-
 </section>
 
-<section id="projects">
+<!-- PROJECTS -->
 
+<section id="projects" class="content-section">
+
+  <p class="section-kicker">Selected Work</p>
   <h2>Selected Research Projects</h2>
 
-  <div class="grid">
+  <div class="cards two">
 
-    <div class="card">
-
+    <article class="card">
       <h3>Wheat Spike Instance Segmentation</h3>
-
       <p>
         Deep learning for wheat spike detection,
-        segmentation and grain yield estimation.
+        segmentation, and grain yield estimation.
       </p>
+    </article>
 
-    </div>
-
-    <div class="card">
-
+    <article class="card">
       <h3>Multimodal Crop Trait Prediction</h3>
-
       <p>
-        Combining UAV time-series, ground imagery
+        Combining UAV time-series, ground imagery,
         and SNP markers for crop trait prediction.
       </p>
-
-    </div>
+    </article>
 
   </div>
-
 </section>
 
-<section id="publications">
+<!-- PUBLICATIONS -->
 
+<section id="publications" class="content-section">
+
+  <p class="section-kicker">Scientific Output</p>
   <h2>Selected Publications</h2>
 
-  <p>
-    Solimani, F. et al. (2026). An Integrated YOLOv11-Based Framework for Wheat Spike Phenotyping Segmentation
-and Grain Yield Estimation. Smart Agricultural Technology, 102370. Development and validation of a YOLOv11-
-based image-analysis framework integrating segmentation and quantitative downstream analysis. https://doi.org/10.1016/j.atech.2026.102370
-  </p>
-Solimani, F. et al. (2024). Optimizing Tomato Plant Phenotyping Detection: Boosting YOLOv8 Architecture to
-Tackle Data Complexity. Computers and Electronics in Agriculture, 218, 108728. Development and evaluation of
-modified YOLOv8 architectures for robust object detection under complex imaging conditions. https://doi.org/10.1016/j.compag.2024.108728
-  <p>
-    Solimani, F. et al. (2024). Enhancing Small Object Detection in YOLOv8: Model Head Adaptations Analysis.
-IEEE CASE 2024. Evaluation and modification of deep-learning detector architectures for small-object detection. https://doi.org/10.1109/CASE59546.2024.10711401
- <p>
-   Solimani, F. et al. (2023). A Systematic Review of Effective Hardware and Software Factors Affecting HighThroughput Plant Phenotyping. Information, 14(4), 214. Review of imaging hardware, computational methods,
-image-analysis pipelines, and automated phenotyping systems. https://doi.org/10.3390/info14040214 
- <p>
-   Cardellicchio, A., Solimani, F., Dimauro, G., Petrozza, A., Summerer, S., Cellini, F., & Renò, V. (2023). Detection
-of Tomato Plant Phenotyping Traits Using YOLOv5-Based Single Stage Detectors. Computers and Electronics in
-Agriculture, 207, 107757. Application and evaluation of YOLO-based single-stage detectors for automated image
-analysis. https://doi.org/10.1016/j.compag.2023.107757
- <p>
-Cardellicchio, A., Solimani, F., Dimauro, G., Summerer, S., & Renò, V. (2022). Patch-Based Probabilistic
-Identification of Plant Roots Using Convolutional Neural Networks. Pattern Recognition Letters. CNN-based
-probabilistic image identification using patch-level image analysis. https://doi.org/10.1016/j.patrec.2024.05.010
- <p>
-   Robles-Zazueta, C.A, et al., including F. Solimani., (2026). Early career professionals and global inclusion for the
-future of plant phenomics, Journal of Experimental Botany, 2026, erag371. https://doi.org/10.1093/jxb/erag371
-<p>
-  Solimani, F. et al. (2022). Inffuence of Nozzle Type, Air-Assisted Velocity, and Wind
-Velocity on Spray Drift in Boom Sprayers. CIGR Journal, 24(2). 
-   
-   
-  </p>
+  <div class="publications">
 
+    <article class="publication">
+      <span class="pub-year">2026</span>
+      <div>
+        <h3>
+          An Integrated YOLOv11-Based Framework for
+          Wheat Spike Phenotyping Segmentation and
+          Grain Yield Estimation
+        </h3>
+        <p class="pub-authors">
+          Solimani, F. et al. (2026).
+        </p>
+        <p>
+          <em>Smart Agricultural Technology, 102370.</em>
+          Development and validation of a YOLOv11-based
+          image-analysis framework integrating segmentation
+          and quantitative downstream analysis.
+        </p>
+        <a class="inline-link"
+           href="https://doi.org/10.1016/j.atech.2026.102370"
+           target="_blank" rel="noopener noreferrer">
+          View Publication ↗
+        </a>
+      </div>
+    </article>
+
+    <article class="publication">
+      <span class="pub-year">2024</span>
+      <div>
+        <h3>
+          Optimizing Tomato Plant Phenotyping Detection:
+          Boosting YOLOv8 Architecture to Tackle
+          Data Complexity
+        </h3>
+        <p class="pub-authors">
+          Solimani, F. et al. (2024).
+        </p>
+        <p>
+          <em>
+            Computers and Electronics in Agriculture,
+            218, 108728.
+          </em>
+          Development and evaluation of modified
+          YOLOv8 architectures for robust object detection
+          under complex imaging conditions.
+        </p>
+        <a class="inline-link"
+           href="https://doi.org/10.1016/j.compag.2024.108728"
+           target="_blank" rel="noopener noreferrer">
+          View Publication ↗
+        </a>
+      </div>
+    </article>
+
+    <article class="publication">
+      <span class="pub-year">2024</span>
+      <div>
+        <h3>
+          Enhancing Small Object Detection in YOLOv8:
+          Model Head Adaptations Analysis
+        </h3>
+        <p class="pub-authors">
+          Solimani, F. et al. (2024).
+        </p>
+        <p>
+          <em>IEEE CASE 2024.</em>
+          Evaluation and modification of deep-learning
+          detector architectures for small-object detection.
+        </p>
+        <a class="inline-link"
+           href="https://doi.org/10.1109/CASE59546.2024.10711401"
+           target="_blank" rel="noopener noreferrer">
+          View Publication ↗
+        </a>
+      </div>
+    </article>
+
+    <article class="publication">
+      <span class="pub-year">2023</span>
+      <div>
+        <h3>
+          A Systematic Review of Effective Hardware
+          and Software Factors Affecting
+          High-Throughput Plant Phenotyping
+        </h3>
+        <p class="pub-authors">
+          Solimani, F. et al. (2023).
+        </p>
+        <p>
+          <em>Information, 14(4), 214.</em>
+          Review of imaging hardware, computational methods,
+          image-analysis pipelines, and automated
+          phenotyping systems.
+        </p>
+        <a class="inline-link"
+           href="https://doi.org/10.3390/info14040214"
+           target="_blank" rel="noopener noreferrer">
+          View Publication ↗
+        </a>
+      </div>
+    </article>
+
+    <article class="publication">
+      <span class="pub-year">2023</span>
+      <div>
+        <h3>
+          Detection of Tomato Plant Phenotyping Traits
+          Using YOLOv5-Based Single Stage Detectors
+        </h3>
+        <p class="pub-authors">
+          Cardellicchio, A., Solimani, F.,
+          Dimauro, G., Petrozza, A., Summerer, S.,
+          Cellini, F., &amp; Renò, V. (2023).
+        </p>
+        <p>
+          <em>
+            Computers and Electronics in Agriculture,
+            207, 107757.
+          </em>
+          Application and evaluation of YOLO-based
+          single-stage detectors for automated image analysis.
+        </p>
+        <a class="inline-link"
+           href="https://doi.org/10.1016/j.compag.2023.107757"
+           target="_blank" rel="noopener noreferrer">
+          View Publication ↗
+        </a>
+      </div>
+    </article>
+
+    <article class="publication">
+      <span class="pub-year">2022</span>
+      <div>
+        <h3>
+          Patch-Based Probabilistic Identification of
+          Plant Roots Using Convolutional Neural Networks
+        </h3>
+        <p class="pub-authors">
+          Cardellicchio, A., Solimani, F.,
+          Dimauro, G., Summerer, S.,
+          &amp; Renò, V. (2022).
+        </p>
+        <p>
+          <em>Pattern Recognition Letters.</em>
+          CNN-based probabilistic image identification
+          using patch-level image analysis.
+        </p>
+        <a class="inline-link"
+           href="https://doi.org/10.1016/j.patrec.2024.05.010"
+           target="_blank" rel="noopener noreferrer">
+          View Publication ↗
+        </a>
+      </div>
+    </article>
+
+    <article class="publication">
+      <span class="pub-year">2026</span>
+      <div>
+        <h3>
+          Early Career Professionals and Global Inclusion
+          for the Future of Plant Phenomics
+        </h3>
+        <p class="pub-authors">
+          Robles-Zazueta, C.A. et al.,
+          including F. Solimani (2026).
+        </p>
+        <p>
+          <em>
+            Journal of Experimental Botany,
+            2026, erag371.
+          </em>
+        </p>
+        <a class="inline-link"
+           href="https://doi.org/10.1093/jxb/erag371"
+           target="_blank" rel="noopener noreferrer">
+          View Publication ↗
+        </a>
+      </div>
+    </article>
+
+    <article class="publication">
+      <span class="pub-year">2022</span>
+      <div>
+        <h3>
+          Influence of Nozzle Type, Air-Assisted Velocity,
+          and Wind Velocity on Spray Drift in Boom Sprayers
+        </h3>
+        <p class="pub-authors">
+          Solimani, F. et al. (2022).
+        </p>
+        <p>
+          <em>CIGR Journal, 24(2).</em>
+        </p>
+      </div>
+    </article>
+
+  </div>
 </section>
 
-<section id="contact">
+<!-- CONTACT -->
 
+<section id="contact" class="content-section">
+
+  <p class="section-kicker">Get in Touch</p>
   <h2>Contact</h2>
 
-  <p>
-    Consiglio per la ricerca in agricoltura e l’analisi dell’economia agraria (CREA), Centro di Ricerca Cerealicoltura e Colture Industriali (CREA-CI), S.S. 673 Metri 25200, Foggia, 71122, Italy
-  </p>
+  <div class="contact-grid">
 
-  <p>
-   firozeh.solimani@crea.gov.it
-    <p>
-    firozeh.solimani@stiima.cnr.it
+    <div class="contact-panel">
+      <h3>Affiliation</h3>
+
       <p>
-    firozeh.s22@gmail.com
-        <p>
-    https://scholar.google.com/citations?user=FIUph54AAAAJ&hl=en 
-          <p>
-   https://www.linkedin.com/in/%F0%9D%91%AD%F0%9D%99%9E%F0%9D%92%93%F0%9D%99%A4%F0%9D%92%9B%F0%9D%99%9A%F0%9D%92%89-s-23704219b/
-    +39-3791966798
-    
-  </p>
+        Consiglio per la ricerca in agricoltura
+        e l’analisi dell’economia agraria (CREA),
+        Centro di Ricerca Cerealicoltura
+        e Colture Industriali (CREA-CI),
+        S.S. 673 Metri 25200,
+        Foggia, 71122, Italy
+      </p>
 
+      <p>
+        <a href="tel:+393791966798">
+          +39-3791966798
+        </a>
+      </p>
+    </div>
+
+    <div class="contact-panel">
+      <h3>Email &amp; Academic Profiles</h3>
+
+      <p>
+        <a href="mailto:firozeh.solimani@crea.gov.it">
+          firozeh.solimani@crea.gov.it
+        </a>
+      </p>
+
+      <p>
+        <a href="mailto:firozeh.solimani@stiima.cnr.it">
+          firozeh.solimani@stiima.cnr.it
+        </a>
+      </p>
+
+      <p>
+        <a href="mailto:firozeh.s22@gmail.com">
+          firozeh.s22@gmail.com
+        </a>
+      </p>
+
+      <p>
+        <a href="https://scholar.google.com/citations?user=FIUph54AAAAJ&amp;hl=en"
+           target="_blank" rel="noopener noreferrer">
+          Google Scholar ↗
+        </a>
+      </p>
+
+      <p>
+        <a href="https://www.linkedin.com/in/%F0%9D%91%AD%F0%9D%99%9E%F0%9D%92%93%F0%9D%99%A4%F0%9D%92%9B%F0%9D%99%9A%F0%9D%92%89-s-23704219b/"
+           target="_blank" rel="noopener noreferrer">
+          LinkedIn ↗
+        </a>
+      </p>
+
+    </div>
+  </div>
 </section>
 
 </main>
-
-<!-- FOOTER -->
 
 <footer>
   © 2026 Firozeh Solimani | Academic Research Portfolio
