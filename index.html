@@ -1622,25 +1622,21 @@
     © 2026 Firozeh Solimani | Academic Research Portfolio
   </footer>
 
-<audio id="bgMusic" src="music.mp3" loop></audio>
 
-<button onclick="toggleMusic()" id="musicBtn">
-  🎵 Play Music
-</button>
+<!-- Background Music -->
+<audio id="bgMusic" autoplay loop preload="auto">
+  <source src="d0635e8e.mp3" type="audio/mpeg">
+</audio>
 
 <script>
-function toggleMusic() {
-  const music = document.getElementById("bgMusic");
-  const btn = document.getElementById("musicBtn");
+window.addEventListener("load", function () {
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.4;
 
-  if (music.paused) {
-    music.play();
-    btn.textContent = "🔇 Stop Music";
-  } else {
-    music.pause();
-    btn.textContent = "🎵 Play Music";
-  }
-}
+    music.play().catch(function(error) {
+        console.log("Autoplay blocked:", error);
+    });
+});
 </script>
 
 </body>
