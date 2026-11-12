@@ -1622,5 +1622,26 @@
     © 2026 Firozeh Solimani | Academic Research Portfolio
   </footer>
 
+<audio id="bgMusic" src="music.mp3" loop></audio>
+
+<button onclick="toggleMusic()" id="musicBtn">
+  🎵 Play Music
+</button>
+
+<script>
+function toggleMusic() {
+  const music = document.getElementById("bgMusic");
+  const btn = document.getElementById("musicBtn");
+
+  if (music.paused) {
+    music.play();
+    btn.textContent = "🔇 Stop Music";
+  } else {
+    music.pause();
+    btn.textContent = "🎵 Play Music";
+  }
+}
+</script>
+
 </body>
 </html>
